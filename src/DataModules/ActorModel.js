@@ -1,5 +1,5 @@
 
-// import moment from 'moment'
+import moment from 'moment'
 
 class ActorModel {
     constructor(fname, lname, birthday, IMDBlink, img) {

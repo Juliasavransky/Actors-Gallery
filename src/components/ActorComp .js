@@ -1,5 +1,5 @@
+import React from 'react';
 import React, { Component } from 'react';
-import './ActorComp.css';
 
 // In ActorGallery render multiple ActorComp components (using map or for loop)
 //  and pass the actor object to each ActorComp
@@ -10,20 +10,25 @@ class ActorComp extends React.Component {
 
         console.log(this.props);
 
+        // const actorsJSX = this.props.actorsData.map(actor =>
+        // <div>
+        //     <div>{actor.birthday}</div>
+        // </div>);
+        // {actorsJSX}
     }
     render() {
-        // const myStyle = {
-        //     backgroundColor: this.props.color
-        //   }
         return (
             <div className="container">
                 <div className="card">
-                    
-                </div>
+                <img src={this.props.actorobject.img}></img>
+                <a className="aActorComp" href={this.props.actorobject.IMDBlink}>
+                {this.props.actorobject.fname + ' ' + this.props.actorobject.lname}</a>
+            </div>
             </div>
         );
     }
 }
+
 
 
 export default ActorComp;
