@@ -2,7 +2,7 @@
 // import moment from 'moment'
 
 class ActorModel {
-    constructor(fname, lname, birthday, IMDBlink,img) {
+    constructor(fname, lname, birthday, IMDBlink, img) {
         this.fname = fname;
         this.lname = lname;
         this.birthday = birthday;

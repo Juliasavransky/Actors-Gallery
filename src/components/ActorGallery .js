@@ -9,23 +9,30 @@ import React, { Component } from 'react';
 class ActorGallery extends React.Component {
     constructor(props) {
         super(props);
-       
-        console.log(this.props);
-
+        // console.log(this.props);
     }
-
-
-
     render() {
-        return (
+
+        // const { fname, lname, birthday, IMDBlink, img } = this.props;
+        // console.log(this.props);
+
+        const actorsJSX = this.props.actorsData.map(actor =>
             <div>
-                Hello!!!
-                <ActorComp>{this.props.actorsData}</ActorComp>
+                <div>{actor.fname}</div>
+                <div>{actor.lname}</div>
+                <div>{actor.birthday}</div>
+                <div>{actor.IMDBlink}</div>
+                <div>{actor.img}</div>
+            </div>);
+
+        return (
+            <div >
+                <ActorComp actorsJSX={actorsJSX} />
             </div>
         );
     }
 }
 
 
-// this.actors.fname, lname, birthday, IMDBlink,img
 export default ActorGallery;
+
