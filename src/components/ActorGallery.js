@@ -10,13 +10,7 @@ import ActorComp from './ActorComp';
 class ActorGallery extends React.Component {
     constructor(props) {
         super(props);
-        // console.log(this.props);
-
-        // const actorsJSX = this.props.actorsData.map(actor =>
-        // <div>
-        //     <div>{actor.birthday}</div>
-        // </div>);
-        // {actorsJSX}
+        console.log(this.props);
     }
     render() {
 
@@ -25,7 +19,7 @@ class ActorGallery extends React.Component {
 
 // 
         return (
-            <div>
+            <div className="container">
                 {this.props.actorsData.map((actor)=><ActorComp actorobject={actor}/>)}
             </div>
         );

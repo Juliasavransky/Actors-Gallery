@@ -8,7 +8,7 @@ class ActorComp extends React.Component {
     constructor(props) {
         super(props);
 
-        console.log(this.props);
+        console.log(this.props.actorobject);
 
 
 
@@ -16,11 +16,12 @@ class ActorComp extends React.Component {
 
     render() {
         return (
-            <div className="container">
+            <div>
                 <div className="card">
                     <img src={this.props.actorobject.img} />
                     <a href={this.props.actorobject.IMDBlink}>
-                        {this.props.actorobject.fname + ' ' + this.props.actorobject.lname}</a>
+                        {this.props.actorobject.fname + ' ' + this.props.actorobject.lname} </a>
+                        <p>{this.props.actorobject.ageOfActor()}</p>
                 </div>
             </div>
         );

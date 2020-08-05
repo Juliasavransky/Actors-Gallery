@@ -2,8 +2,7 @@ import React from 'react';
 import './App.css';
 import ActorModel from './DataModules/ActorModel';
 import ActorGallery from './components/ActorGallery';
-import ActorComp from './components/ActorComp';
-// import ActorComp from './components/ActorComp';
+
 
 
 
@@ -25,29 +24,7 @@ function App() {
   // this.actorsData.push.(new ActorModel("Ayelet", "Zurer", " June 28, 1969", "https://www.imdb.com/name/nm0957909/", "https://m.media-amazon.com/images/M/MV5BNTM3MzE3ODc5NF5BMl5BanBnXkFtZTcwMTg0MjY2OQ@@._V1_UX214_CR0,0,214,317_AL_.jpg"));
 
   // console.log(actorsData)
- // ageOfActor() {
-  //   //Change ME
-  // var DOB = this.props.actorsData.birthday;
-  // var millisecondsBetweenDOBAnd1970 = Date.parse(DOB);
-  // var millisecondsBetweenNowAnd1970 = Date.now();
-  // var ageInMilliseconds = millisecondsBetweenNowAnd1970 - millisecondsBetweenDOBAnd1970;
 
-  // var milliseconds = ageInMilliseconds;
-  // var second = 1000;
-  // var minute = second * 60;
-  // var hour = minute * 60;
-  // var day = hour * 24;
-  // var month = day * 30;
-  // var year = day * 365;
-
-  // //let the age conversion begin
-  // var years = Math.round(milliseconds / year);
-  // console.log(years);
-
-  //   console.log(ageOfActor);
-  // }
-  // ageOfActor()
-  // console.log(ageOfActor);
 
   return (
     <div className="App">
