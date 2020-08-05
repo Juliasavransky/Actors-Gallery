@@ -1,6 +1,6 @@
 // import React from 'react';
 import React, { Component } from 'react';
-// import ActorComp from './ActorComp ';
+import ActorComp from './ActorComp';
 
 
 // Create an ActorGallery component (under the "components" folder).
