@@ -16,12 +16,12 @@ class ActorComp extends React.Component {
 
     render() {
         return (
-            <div>
-                <div className="card">
-                    <img src={this.props.actorobject.img} />
-                    <a href={this.props.actorobject.IMDBlink}>
+            <div className="card col-lg-3 col-md-3 col-sm-12">
+                <div className="">
+                    <img src={this.props.actorobject.img} /><br/>
+                    <a className="text" href={this.props.actorobject.IMDBlink}target="_blank" >
                         {this.props.actorobject.fname + ' ' + this.props.actorobject.lname} </a>
-                        <p>{this.props.actorobject.ageOfActor()}</p>
+                        <p className="text">{this.props.actorobject.ageOfActor()}</p>
                 </div>
             </div>
         );

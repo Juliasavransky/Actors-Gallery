@@ -11,16 +11,31 @@ class ActorGallery extends React.Component {
     constructor(props) {
         super(props);
         console.log(this.props);
+
+        this.state = {
+            value: ""
+        }
+
     }
+    handleOnChange = (event) => {
+        console.log("hello");
+        this.setState({ value: event.target.value })
+    }
+
     render() {
+const filterCards= this.props.actorsData.filter((actor)=>{ 
+   return actor.fname.includes(this.state.value.toLowerCase())
+    
+})
 
-        // const { fname, lname, birthday, IMDBlink, img } = this.props;
-        // console.log(this.props);
-
-// 
         return (
-            <div className="container">
-                {this.props.actorsData.map((actor)=><ActorComp actorobject={actor}/>)}
+            <div className="search">
+                <label  for="search">Search: </label>
+                <input value={this.state.value} type="search" onChange={(event) => this.handleOnChange(event)}></input>
+                <div className="container">
+               {/* < ActorComp actorobject={filterCards}/> */}
+                    {filterCards.map((actor) => <ActorComp actorobject={actor} />)}
+                </div>
             </div>
         );
     }
