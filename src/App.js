@@ -2,9 +2,8 @@ import React from 'react';
 import './App.css';
 import ActorModel from './DataModules/ActorModel';
 import ActorGallery from './components/ActorGallery';
-import { render } from 'react-dom';
 import axios from 'axios';
-import ActorsPage from './components/ActorsPage'
+import MoviesPage from './components/MoviesPage';
 
 
 class App extends React.Component {
@@ -32,7 +31,7 @@ componentDidMount(){
     return (
       <div className="App">
         <ActorGallery actors={this.state.actors} />
-        <ActorsPage/>
+        <MoviesPage/>
       </div>
     );
   }

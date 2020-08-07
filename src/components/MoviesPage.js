@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import LiveSearchBox from './LiveSearchBox'
 
-class ActorsPage extends Component {
+class MoviesPage extends Component {
     render() {
         return (
             <div className="p-actors">
-               < LiveSearchBox/>
+               < LiveSearchBox placeholderText="Search Movies"/>
             </div>
         );
     }
 }
 
-export default ActorsPage;
+export default MoviesPage;
