@@ -5,44 +5,58 @@ import './MoviesPage.css';
 
 
 class MoviesPage extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
 
-        this.state={
-        SearchResults: []
+        this.state = {
+            searchResults: []
+        movies: []
+
         }
 
         this.SearchMovies = this.SearchMovies.bind(this);
         this.addMovie = this.addMovie.bind(this);
     }
 
-    SearchMovies(SearchText) {
+    SearchMovies(searchText) {
 
-        if (SearchText){
+        if (searchText) {
             this.setState({
-                SearchResults: this.state.searchResults.concat(SearchText)
-             })
+                searchResults: this.state.searchResults.concat(searchText)
+            })
         } else {
             this.setState({
                 SearchResults: []
-             })
+            })
         }
-       
-    }  
 
-    addMovie(index){
-        alert(htis.state.searchResults[index]);
     }
+
+    addMovie(index) {
+        this.setState({
+            movie: this.state.movies.concat(this.state.searchResults[index])
+        })
+
+    }
+
     render() {
 
-      const { SearchResults } = this.state
+        const { SearchResults, movies } = this.state
+
+        const moviesView = movies.map(movie =>
+            <Col lg={3} md={4} sm={6} >
+                movie
+             </Col>
+        )
 
         return (
             <div className="p-actors">
                 <Container>
-                    < LiveSearchBox placeholderText="Search Movies" results={SearchResults} 
-                    searchTextChanged={this.SearchMovies } resultSelected={this.addMovie} />
-                    <p>adffshfgnn</p>
+                    < LiveSearchBox placeholderText="Search Movies" results={SearchResults}
+                        searchTextChanged={this.SearchMovies} resultSelected={this.addMovie} />
+                    <Row>
+                        {moviesView}
+                    </Row>
                 </Container>
             </div>
         );

@@ -9,7 +9,7 @@ class LiveSearchBox extends Component {
         super(props);
 
         this.state = {
-         searchText: []
+         searchText: ""
 
         }
         this.handelInputChange = this.handelInputChange.bind(this);
@@ -18,7 +18,7 @@ class LiveSearchBox extends Component {
     handelInputChange(event) {
         this.setState({
             searchText: event.target.value
-        })
+        });
 
         this.props.searchTextChanged(event.target.value);
     }
@@ -28,7 +28,7 @@ class LiveSearchBox extends Component {
         const { searchText } = this.state;
 
         const listGroupItems = results.map((result, index) =>
-    <ListGroup.Item key={index} action onClick={ () => resultSelected(index) }>{result}</ListGroup.Item>);
+    <ListGroup.Item key={index} action onClick={() => resultSelected(index)}>{result}</ListGroup.Item>);
 
         return (
             <div className="c-LiveSearchBox">
