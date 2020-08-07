@@ -8,23 +8,26 @@ class MoviesPage extends Component {
     constructor(props){
         super(props);
 
-        const results = [
-            "result 1",
-            "result 2",
-            "result 3",
-            "result 4"
-        ]
+        
 
         this.state={
-            SearchResults: results
+        SearchResults: []
         }
         this.SearchMovies = this.SearchMovies.bind(this);
     }
 
     SearchMovies(SearchText) {
-        this.setState({
-            SearchResults: this.state.searchResults.concat(SearchText)
-         })
+
+        if (SearchText){
+            this.setState({
+                SearchResults: this.state.searchResults.concat(SearchText)
+             })
+        }else{
+            this.setState({
+                SearchResults: []
+             })
+        }
+       
     }  
     render() {
 
