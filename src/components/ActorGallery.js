@@ -3,10 +3,6 @@ import React, { Component } from 'react';
 import ActorComp from './ActorComp';
 
 
-// Create an ActorGallery component (under the "components" folder).
-//  At first the components receives an array of actors as
-//   a prop and prints it to a div in the render function
-
 class ActorGallery extends React.Component {
     constructor(props) {
         super(props);

@@ -1,6 +1,4 @@
 
-import moment from 'moment'
-
 class ActorModel {
     constructor(fname, lname, birthday, IMDBlink, img) {
         this.fname = fname;
@@ -11,7 +9,6 @@ class ActorModel {
     }
 
     ageOfActor() {
-        //Change ME
         var DOB = this.birthday;
         var millisecondsBetweenDOBAnd1970 = Date.parse(DOB);
         var millisecondsBetweenNowAnd1970 = Date.now();
@@ -31,10 +28,6 @@ class ActorModel {
         return years;
 
     }
-
-
-
-
 
 }
 

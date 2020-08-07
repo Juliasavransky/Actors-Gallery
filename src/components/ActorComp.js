@@ -1,8 +1,6 @@
 import React from 'react';
 // import React, { Component } from 'react';
 
-// In ActorGallery render multiple ActorComp components (using map or for loop)
-//  and pass the actor object to each ActorComp
 
 class ActorComp extends React.Component {
     constructor(props) {
@@ -32,13 +30,3 @@ class ActorComp extends React.Component {
 
 
 export default ActorComp;
-
-
-      // const actorsJSX = this.props.actorsData.map(actor =>
-        //     <div>
-        //         <div>{actor.fname}</div>
-        //         <div>{actor.lname}</div>
-        //         <div>{actor.birthday}</div>
-        //         <img src={actor.IMDBlink}></img>
-        //         <a href={actor.img}></a>
-        //     </div>);  {actorsJSX}

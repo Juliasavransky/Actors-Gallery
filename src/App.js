@@ -4,8 +4,7 @@ import ActorModel from './DataModules/ActorModel';
 import ActorGallery from './components/ActorGallery';
 import { render } from 'react-dom';
 import axios from 'axios';
-
-
+import ActorsPage from './components/ActorsPage'
 
 
 class App extends React.Component {
@@ -29,13 +28,11 @@ componentDidMount(){
   })
 }
 
-
-
- 
   render() {
     return (
       <div className="App">
         <ActorGallery actors={this.state.actors} />
+        <ActorsPage/>
       </div>
     );
   }
