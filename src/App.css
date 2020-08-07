@@ -7,13 +7,13 @@ body {
   background-color: #8696a8;
   box-sizing: border-box;
 }
-.container {
+/* .container {
   display: flex;
   margin-top: 30px;
   flex-direction: row;
   flex-wrap: wrap;
   Justify-content: center;
-}
+} */
 
 .card {
   background-color: #eef5fd;

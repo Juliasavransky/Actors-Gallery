@@ -1,0 +1,9 @@
+.c-LiveSearchBox{
+    position: relative;
+}
+
+.c-LiveSearchBox .searchResults{
+    position: absolute;
+    width: 100%;
+
+}
