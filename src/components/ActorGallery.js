@@ -23,7 +23,7 @@ class ActorGallery extends React.Component {
     }
 
     render() {
-        const filterCards = this.props.actorsData.filter((actor) => {
+        const filterCards = this.props.actors.filter((actor) => {
             return actor.fname.includes(this.state.value.toLowerCase())
 
         })
