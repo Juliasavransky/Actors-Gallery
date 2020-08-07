@@ -22,13 +22,18 @@ class LiveSearchBox extends Component {
 
         this.props.searchTextChanged(event.target.value);
     }
-
+    handelOnClick(index){
+        this.propsresultSelected(index)
+        this.setState({
+            searchText: ""
+        })
+    }
     render() {
         const { placeholderText, results, resultSelected } = this.props;
         const { searchText } = this.state;
 
         const listGroupItems = results.map((result, index) =>
-    <ListGroup.Item key={index} action onClick={() => resultSelected(index)}>{result}</ListGroup.Item>);
+    <ListGroup.Item key={index} action onClick={() => this.handelOnClick(index)}>{result}</ListGroup.Item>);
 
         return (
             <div className="c-LiveSearchBox">
