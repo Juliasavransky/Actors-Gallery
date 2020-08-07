@@ -10,17 +10,16 @@ class LiveSearchBox extends Component {
     }
 
     render() {
-        const { placeholderText } = this.props;
+        const { placeholderText, results } = this.props;
+
+        const listGroupItems = results.map(result =>
+             <ListGroup.Item action></ListGroup.Item>);
 
         return (
             <div className="c-LiveSearchBox">
                 <Form.Control type="search" placeholder={placeholderText} />
                 <ListGroup className="searchResults">
-                    <ListGroup.Item action>Cras justo odio</ListGroup.Item>
-                    <ListGroup.Item action>Dapibus ac facilisis in</ListGroup.Item>
-                    <ListGroup.Item action>Morbi leo risus</ListGroup.Item>
-                    <ListGroup.Item action>Porta ac consectetur ac</ListGroup.Item>
-                    <ListGroup.Item action>Vestibulum at eros</ListGroup.Item>
+                   {listGroupItems}
                 </ListGroup>
             </div>
         );
