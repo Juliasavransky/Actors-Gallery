@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LiveSearchBox from './LiveSearchBox'
 import { Container } from 'react-bootstrap';
+import './MoviesPage.css';
 
 class MoviesPage extends Component {
     render() {
