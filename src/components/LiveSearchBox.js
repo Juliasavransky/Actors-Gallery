@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Form } from 'react-bootstrap';
+
 
 class LiveSearchBox extends Component {
     constructor(props){
@@ -7,10 +9,11 @@ class LiveSearchBox extends Component {
     }
 
     render() {
-        const { placeholderText }=this.props;
+        const { placeholderText } = this.props;
+
         return (
             <div className="c-LiveSearchBox">
-                <input type="search" placeholder={placeholderText}/>
+                <Form.Control type="search" placeholder={placeholderText}/>
             </div>
         );
     }

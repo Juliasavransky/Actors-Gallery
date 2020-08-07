@@ -4,6 +4,7 @@ import ActorModel from './DataModules/ActorModel';
 import ActorGallery from './components/ActorGallery';
 import axios from 'axios';
 import MoviesPage from './components/MoviesPage';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 class App extends React.Component {

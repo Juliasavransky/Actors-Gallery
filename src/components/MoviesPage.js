@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import LiveSearchBox from './LiveSearchBox'
+import { Container } from 'react-bootstrap';
 
 class MoviesPage extends Component {
     render() {
         return (
             <div className="p-actors">
-               < LiveSearchBox placeholderText="Search Movies"/>
+                <Container>
+                    < LiveSearchBox placeholderText="Search Movies" />
+                </Container>
             </div>
         );
     }
