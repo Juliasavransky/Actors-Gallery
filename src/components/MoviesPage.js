@@ -4,6 +4,10 @@ import { Container } from 'react-bootstrap';
 import './MoviesPage.css';
 
 class MoviesPage extends Component {
+
+    SearchMovies(SearchText) {
+console.log(SearchText);
+    }  
     render() {
         const results = [
             "result 1",
@@ -15,7 +19,8 @@ class MoviesPage extends Component {
         return (
             <div className="p-actors">
                 <Container>
-                    < LiveSearchBox placeholderText="Search Movies" results={[]} />
+                    < LiveSearchBox placeholderText="Search Movies" results={[]} 
+                    searchTextChanged={this.SearchMovies } />
                     <p>adffshfgnn</p>
                 </Container>
             </div>
