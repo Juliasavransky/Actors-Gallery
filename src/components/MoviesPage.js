@@ -8,12 +8,12 @@ class MoviesPage extends Component {
     constructor(props){
         super(props);
 
-        
-
         this.state={
         SearchResults: []
         }
+
         this.SearchMovies = this.SearchMovies.bind(this);
+        this.addMovie = this.addMovie.bind(this);
     }
 
     SearchMovies(SearchText) {
@@ -22,13 +22,17 @@ class MoviesPage extends Component {
             this.setState({
                 SearchResults: this.state.searchResults.concat(SearchText)
              })
-        }else{
+        } else {
             this.setState({
                 SearchResults: []
              })
         }
        
     }  
+
+    addMovie(index){
+        alert(htis.state.searchResults[index]);
+    }
     render() {
 
       const { SearchResults } = this.state
@@ -37,7 +41,7 @@ class MoviesPage extends Component {
             <div className="p-actors">
                 <Container>
                     < LiveSearchBox placeholderText="Search Movies" results={SearchResults} 
-                    searchTextChanged={this.SearchMovies } />
+                    searchTextChanged={this.SearchMovies } resultSelected={this.addMovie} />
                     <p>adffshfgnn</p>
                 </Container>
             </div>

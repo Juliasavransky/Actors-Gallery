@@ -24,11 +24,11 @@ class LiveSearchBox extends Component {
     }
 
     render() {
-        const { placeholderText, results } = this.props;
+        const { placeholderText, results, resultSelected } = this.props;
         const { searchText } = this.state;
 
         const listGroupItems = results.map((result, index) =>
-            <ListGroup.Item key={index} action></ListGroup.Item>);
+    <ListGroup.Item key={index} action onClick={ () => resultSelected(index) }>{result}</ListGroup.Item>);
 
         return (
             <div className="c-LiveSearchBox">
