@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import LiveSearchBox from './LiveSearchBox'
-import { Container } from 'react-bootstrap';
+import { Container, Col, Row } from 'react-bootstrap';
 import './MoviesPage.css';
-
+import MovieCard from './MovieCard'
 
 class MoviesPage extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            searchResults: []
-        movies: []
+            searchResults: [],
+            movies: []
 
         }
 
@@ -34,7 +34,8 @@ class MoviesPage extends Component {
 
     addMovie(index) {
         this.setState({
-            movie: this.state.movies.concat(this.state.searchResults[index])
+            movie: this.state.movies.concat(this.state.searchResults[index]),
+            SearchResults: []
         })
 
     }
@@ -45,7 +46,7 @@ class MoviesPage extends Component {
 
         const moviesView = movies.map(movie =>
             <Col lg={3} md={4} sm={6} >
-                movie
+                <MovieCard movie={movies}/>
              </Col>
         )
 

@@ -7,6 +7,7 @@ import MoviesPage from './components/MoviesPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
+
 class App extends React.Component {
   // console.log(ActorModel) 
   constructor(props) {
