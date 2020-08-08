@@ -1,5 +1,5 @@
 import React from 'react';
-// import React, { Component } from 'react';
+import { Card } from 'react-bootstrap';
 
 
 class ActorComp extends React.Component {
@@ -14,13 +14,18 @@ class ActorComp extends React.Component {
 
     render() {
         return (
-            <div className="card col-lg-3 col-md-3 col-sm-12">
-                <div className="">
-                    <img src={this.props.actorobject.img} /><br/>
-                    <a className="text" href={this.props.actorobject.IMDBlink}target="_blank" >
-                        {this.props.actorobject.fname + ' ' + this.props.actorobject.lname} </a>
-                        <p className="text">{this.props.actorobject.ageOfActor()}</p>
-                </div>
+            <div className="actorComp">
+                <Card style={{ width: '18rem' }}>
+                    <Card.Img variant="top" src={this.props.actorobject.img} />
+                    <Card.Body>
+                    <Card.Title> <a className="text" href={this.props.actorobject.IMDBlink} target="_blank" >
+                            {this.props.actorobject.fname + ' ' + this.props.actorobject.lname} </a>
+                       </Card.Title>
+                       <Card.Text>
+                           {this.props.actorobject.ageOfActor()}
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
             </div>
         );
     }

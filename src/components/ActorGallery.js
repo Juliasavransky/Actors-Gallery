@@ -1,6 +1,8 @@
 // import React from 'react';
 import React, { Component } from 'react';
 import ActorComp from './ActorComp';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Col, Row, FormControl, InputGroup, Form } from 'react-bootstrap';
 
 
 class ActorGallery extends React.Component {
@@ -14,23 +16,27 @@ class ActorGallery extends React.Component {
 
     }
     handleOnChange = (event) => {
-        console.log("hello");
         this.setState({ value: event.target.value })
     }
 
     render() {
         const filterCards = this.props.actors.filter((actor) => {
             return actor.fname.includes(this.state.value.toLowerCase())
-
         })
+
+        // connst filterCardsSearched = filterCards.map((actor)=> <ActorComp actorobject ={actor} )
 
         return (
             <div className="search">
-                <label for="search">Search: </label>
-                <input value={this.state.value} type="search" onChange={(event) => this.handleOnChange(event)}></input>
-                <div className="container">
-                    {filterCards.map((actor) => <ActorComp actorobject={actor} />)}
-                </div>
+                <Container>
+                    <Form>
+                        <Form.Group controlId="exampleForm.ControlInput1">
+                            <Form.Label>Search</Form.Label>
+                            <Form.Control type="email" ControlInput value={this.state.value} type="search" onChange={(event) => this.handleOnChange(event)} />
+                        </Form.Group>
+                        {filterCards.map((actor) => <ActorComp actorobject={actor} />)}
+                    </Form>
+                </Container>
             </div>
         );
     }
@@ -38,4 +44,3 @@ class ActorGallery extends React.Component {
 
 
 export default ActorGallery;
-
