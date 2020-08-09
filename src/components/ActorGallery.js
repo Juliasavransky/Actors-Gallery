@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import ActorComp from './ActorComp';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Col, Row, FormControl, InputGroup, Form } from 'react-bootstrap';
+import { Container, Form } from 'react-bootstrap';
 
 
 class ActorGallery extends React.Component {
@@ -31,8 +31,7 @@ class ActorGallery extends React.Component {
                 <Container>
                     <Form>
                         <Form.Group controlId="exampleForm.ControlInput1">
-                            <Form.Label>Search</Form.Label>
-                            <Form.Control type="email" ControlInput value={this.state.value} type="search" onChange={(event) => this.handleOnChange(event)} />
+                            <Form.Control placeholder="Search" ControlInput value={this.state.value} type="search" onChange={(event) => this.handleOnChange(event)} />
                         </Form.Group>
                         {filterCards.map((actor) => <ActorComp actorobject={actor} />)}
                     </Form>

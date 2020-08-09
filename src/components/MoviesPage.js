@@ -21,14 +21,14 @@ class MoviesPage extends Component {
         this.searchMovies = this.searchMovies.bind(this);
         this.addMovie = this.addMovie.bind(this);
     }
-    
+
     searchMovies(searchText) {
 
         if (searchText) {
             const URL = "https://api.themoviedb.org/3/search/movie?api_key=cd23a60dc49ca24d9c528a2af135feba&query=" + searchText;
 
             axios.get(URL).then(response => {
-                console.log(response.data);
+                
                 this.setState({
                     searchResults: response.data.results
                 })
@@ -44,61 +44,51 @@ class MoviesPage extends Component {
 
     addMovie(index) {
 
-        const movietitle = this.state.searchResults[index].original_title;
-        const moviePoster = this.state.searchResults[index].poster_path;
-        const movieId = this.state.searchResults[index].id;
-        // const movieLength = this.state.searchResults[index].runtime;
-        // const movieStar = this.state.searchResults[index].cast[0].mane;
-        // const movieLength = this.state.searchResults[index].crew[0].mane;
-
-        // axios.get(URL).then(response => {
-        //    const url = "https://api.themoviedb.org/3/movie/" + movieId;
-
-        //    response.data.runtime;
-        //     this.setState({
-        //         searchResults: response.data.results
-        //     })
-
-        //      axios.get(URL).then(response => {
-        //     const url = "https://api.themoviedb.org/3/movie/" + movieId;
- 
-        //     response.data.cast[0].mane;
-        //     response.data.crew[0].mane;
-        //      this.setState({
-        //          searchResults: response.data.results
-        //      })
- 
-        //  })
-
-        // })
-        
-       
+        let movietitle, moviePoster, movieId, movieLength, movieStar, movieDirector
+        movietitle = this.state.searchResults[index].original_title;
+        moviePoster = this.state.searchResults[index].poster_path;
+        movieId = this.state.searchResults[index].id;
 
 
+        const MovieURL = "https://api.themoviedb.org/3/movie/" + movieId + "?api_key=cd23a60dc49ca24d9c528a2af135feba&language=en-US";
+        axios.get(MovieURL).then(response => {
+            movieLength = response.data.runtime
+            // movieLength = response.data.movieLength.length ? response.data.movieLength : null ;
+            
+        })
 
-        this.setState({
-            movies: this.state.movies.concat(new MoviesModel(movietitle, moviePoster, movieId )),
-            searchResults: []
+        const CreditsURL = "https://api.themoviedb.org/3/movie/" + movieId + "/credits?api_key=cd23a60dc49ca24d9c528a2af135feba";
+        axios.get(CreditsURL).then(response => {
+            movieStar = response.data.cast.length ? response.data.cast[0].name : null ;
+            movieDirector = response.data.crew.length ? response.data.crew[0].name : null ;
+            console.log(movieStar);
+            console.log(response.data.cast);
+
+            this.setState({
+                movies: this.state.movies.concat(new MoviesModel(movietitle, moviePoster, movieId, movieLength, movieStar, movieDirector)),
+                searchResults: []
+            })
+
         })
 
     }
-    
+
     render() {
 
         const { searchResults, movies } = this.state
-        const resultStrings = searchResults.map(searchResult => searchResult.name);
-
+        const resultStrings = searchResults.map(searchResult => searchResult.original_title);
+console.log(movies);
         const moviesView = movies.map(movie =>
             <Col lg={3} md={4} sm={6}>
-                <MovieCard movie={movies} />
+                <MovieCard movie={movie} />
             </Col>)
+// 
 
-        
         return (
             <div className="p-actors">
                 <Container>
                     < LiveSearchBox placeholderText="Search Movies" results={resultStrings}
-                        searchTextChanged={this.SearchMovies} resultSelected={this.addMovie} />
+                        searchTextChanged={this.searchMovies} resultSelected={this.addMovie} />
                     <Row>
                         {moviesView}
                     </Row>

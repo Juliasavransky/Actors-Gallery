@@ -1,4 +1,4 @@
-/* .App {
+.App {
   text-align: center;
   font-family: Helvetica, sans-serif;
 }
@@ -6,19 +6,23 @@
 body {
   background-color: #8696a8;
   box-sizing: border-box;
-} */
-/* .container {
+}
+.c-LiveSearchBox{
+  margin: 30px;
+}
+.search, {
   display: flex;
-  margin-top: 30px;
+  margin-top: 10px;
   flex-direction: row;
   flex-wrap: wrap;
-  Justify-content: center;
-} */
+  /* Justify-content: space-around ; */
+}
 
-/* .card {
+.actorCard, .movieCard{
+  
+  display: flex;
   margin:10px;
   padding: 10px;
-  max-width: 25%;
   cursor: pointer;
   border-radius: 2%;
   box-shadow:
@@ -28,22 +32,21 @@ body {
   0 22.3px 17.9px rgba(0, 0, 0, 0.072),
   0 41.8px 33.4px rgba(0, 0, 0, 0.086),
   0 100px 80px rgba(0, 0, 0, 0.12);
+}
 
-} */
-
-/* .text{
+.text, .movieCard{
   text-align: center;
   font-family: Helvetica, sans-serif;
   color: #8696a8;
   text-decoration: none;
 
-} */
+}
 
-/* .search{
-margin-top: 30px;
-padding-top: 30px;
+.search, .movieCard{
+margin-top: 10px;
+padding-top: 10px;
 font-family: Helvetica, sans-serif;
-color:#fff ;
+color:#8696a8 ;
 font-size: 1.3em;
-} */
+}
 /* ********************************************************************************** */

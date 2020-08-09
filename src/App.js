@@ -5,6 +5,8 @@ import ActorGallery from './components/ActorGallery';
 import axios from 'axios';
 import MoviesPage from './components/MoviesPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import HomePage from './components/HomePage';
+
 
 
 
@@ -32,6 +34,7 @@ componentDidMount(){
   render() {
     return (
       <div className="App">
+        <HomePage/>
         <ActorGallery actors={this.state.actors} />
         <MoviesPage/>
       </div>
