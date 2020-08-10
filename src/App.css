@@ -11,10 +11,10 @@ body {
   margin: 30px;
 }
 .search, {
-  display: flex;
+  /* display: flex; */
   margin-top: 10px;
-  flex-direction: row;
-  flex-wrap: wrap;
+  /* flex-direction: row;
+  flex-wrap: wrap; */
   /* Justify-content: space-around ; */
 }
 
@@ -23,7 +23,7 @@ body {
 }
 .actorCard, .movieCard{
   
-  display: flex;
+  /* display: flex; */
   margin:10px;
   padding: 10px;
   cursor: pointer;

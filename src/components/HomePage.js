@@ -6,7 +6,7 @@ class HomePage extends Component {
     render() {
         return (
             <Container>
-                <Navbar bg="light" variant="light">
+                <Navbar sticky="top" bg="light" variant="light">
                     <Nav className="mr-auto">
                         <Nav.Link href="#home">Home</Nav.Link>
                         <Nav.Link href="#Actors">Actors</Nav.Link>

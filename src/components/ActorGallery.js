@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import ActorComp from './ActorComp';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Form } from 'react-bootstrap';
+import { Container, Form, Row, Col } from 'react-bootstrap';
 
 
 class ActorGallery extends React.Component {
@@ -24,17 +24,19 @@ class ActorGallery extends React.Component {
             return actor.fname.includes(this.state.value.toLowerCase())
         })
 
+
+
         // connst filterCardsSearched = filterCards.map((actor)=> <ActorComp actorobject ={actor} )
 
         return (
             <div className="search">
                 <Container>
-                    <Form>
-                        <Form.Group controlId="exampleForm.ControlInput1">
-                            <Form.Control placeholder="Search" ControlInput value={this.state.value} type="search" onChange={(event) => this.handleOnChange(event)} />
-                        </Form.Group>
-                        {filterCards.map((actor) => <ActorComp actorobject={actor} />)}
-                    </Form>
+                    <Form.Group controlId="exampleForm.ControlInput1">
+                        <Form.Control placeholder="Search" ControlInput value={this.state.value} type="search" onChange={(event) => this.handleOnChange(event)} />
+                    </Form.Group>
+                    <Row>
+                        {filterCards.map((actor) => <Col lg={3} md={4} sm={6}><ActorComp actorobject={actor} /> </Col>)}
+                    </Row>
                 </Container>
             </div>
         );

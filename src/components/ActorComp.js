@@ -11,7 +11,7 @@ class ActorComp extends React.Component {
 
     render() {
         return (
-            <Card className="actorCard" style={{ width: '20rem' }}>
+            <Card className="actorCard" style={{ width: '17rem' }}>
                 <Card.Img variant="top" src={this.props.actorobject.img} />
                 <Card.Body>
                     <Card.Title> <a className="text" href={this.props.actorobject.IMDBlink} target="_blank" >
