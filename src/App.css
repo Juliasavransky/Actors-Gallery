@@ -18,6 +18,9 @@ body {
   /* Justify-content: space-around ; */
 }
 
+.bi{
+  margin-top: 30px;
+}
 .actorCard, .movieCard{
   
   display: flex;
