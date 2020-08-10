@@ -37,14 +37,19 @@ componentDidMount(){
       <div className="App">
         <HashRouter>
           <Switch>
-            <Route path="/home">
+            <Route exact path="/">
             <HomePage/>
+            </Route>
+            <Route exact path="/actors">
+            <ActorGallery actors={this.state.actors} />
+            </Route>
+            <Route exact path="/movies">
+            <MoviesPage/>
             </Route>
           </Switch>
         </HashRouter>
         
-        <ActorGallery actors={this.state.actors} />
-        <MoviesPage/>
+        
       </div>
     );
   }
