@@ -6,6 +6,7 @@ import axios from 'axios';
 import MoviesPage from './components/MoviesPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HomePage from './components/HomePage';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 
 
 
@@ -34,7 +35,14 @@ componentDidMount(){
   render() {
     return (
       <div className="App">
-        <HomePage/>
+        <HashRouter>
+          <Switch>
+            <Route path="/home">
+            <HomePage/>
+            </Route>
+          </Switch>
+        </HashRouter>
+        
         <ActorGallery actors={this.state.actors} />
         <MoviesPage/>
       </div>

@@ -9,8 +9,8 @@ class HomePage extends Component {
                 <Navbar bg="light" variant="light">
                     <Nav className="mr-auto">
                         <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#Actors">Features</Nav.Link>
-                        <Nav.Link href="#Movies">Pricing</Nav.Link>
+                        <Nav.Link href="#Actors">Actors</Nav.Link>
+                        <Nav.Link href="#Movies">Movies</Nav.Link>
                     </Nav>
                 </Navbar>
                 <Jumbotron fluid>
